@@ -109,6 +109,8 @@ main{
     position: relative;
 }
 
+/*modal window*/
+
 .modal-container {
     opacity: 0;
     pointer-events: none;
@@ -119,7 +121,7 @@ main{
     height: 100%;
     position: absolute;
     top: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
 }
 .modal-container.show {
     opacity: 1;
@@ -207,7 +209,14 @@ main{
     font-family: Calibri;
     font-size: 25px;
 }
-
+@keyframes sliderAnimation {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 .slider > .slider-tab {
     position: relative;
     border-radius: 10px;
@@ -215,6 +224,8 @@ main{
     max-width: 840px;
     height: 470px;
     overflow: hidden;
+    animation: sliderAnimation 1s ease-in;
+    transition: all;
 }
 .slider > .slider-tab > img {
     width: 100%;
@@ -283,6 +294,9 @@ main{
     cursor: pointer;
     width: 30px;
     height: 40px;
+}
+.slider-actions > button:focus {
+    outline: 0;
 }
 
 /*top rated*/
